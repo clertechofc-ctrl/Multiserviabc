@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiserviabc | Box, Janelas, Espelhos e Soluções em Vidro</title>
+  <meta name="description" content="Multiserviabc em São Bernardo do Campo. Instalação de box, janelas, espelhos e outros serviços. Orçamento rápido pelo WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#05070b;
+      --bg2:#0b1118;
+      --panel:#101821;
+      --panel2:#151f29;
+      --line:rgba(255,255,255,.08);
+      --text:#f5f8fb;
+      --muted:#a9b8c7;
+      --blue:#1da8ff;
+      --blue2:#4fd1ff;
+      --silver:#dfe7ef;
+      --accent:#00c6ff;
+      --accent2:#4b5cff;
+      --wa:#25d366;
+      --wa2:#159a39;
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:24px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(77,153,255,.09), transparent 30%),
+        radial-gradient(circle at top right, rgba(0,198,255,.08), transparent 28%),
+        linear-gradient(180deg,#04060a 0%, #0a1017 45%, #05070b 100%);
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font-family:inherit}
+
+    .container{
+      width:min(1180px, calc(100% - 24px));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:78px 0;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(29,168,255,.10);
+      border:1px solid rgba(29,168,255,.24);
+      color:#8fddff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .section-top{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:12px;
+      margin-bottom:28px;
+    }
+
+    .section-title{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(34px,5vw,62px);
+      line-height:.95;
+      letter-spacing:.03em;
+    }
+
+    .section-title span,
+    .gradient{
+      background:linear-gradient(135deg,var(--silver),var(--blue2),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .section-sub{
+      max-width:820px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    .btn{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:54px;
+      padding:14px 24px;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      font-family:"Oswald",sans-serif;
+      font-size:16px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
+      transform:translateX(-130%);
+      transition:.7s ease;
+    }
+
+    .btn:hover::before{transform:translateX(130%)}
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent2),var(--blue));
+      color:white;
+      box-shadow:0 14px 32px rgba(29,168,255,.22);
+    }
+
+    .btn-wa{
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      color:white;
+      box-shadow:0 14px 32px rgba(37,211,102,.24);
+    }
+
+    .btn-outline{
+      background:rgba(255,255,255,.04);
+      color:white;
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    /* HEADER */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,7,11,.84);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:60px;
+      height:60px;
+      border-radius:18px;
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#111822,#253242);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      animation:floatLogo 3.2s ease-in-out infinite;
+    }
+
+    .brand-logo::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:conic-gradient(from 0deg, transparent, rgba(79,209,255,.5), transparent 35%, rgba(75,92,255,.5), transparent 75%);
+      animation:spin 7s linear infinite;
+    }
+
+    .brand-logo::after{
+      content:"";
+      position:absolute;
+      inset:4px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0b1218,#17232e);
+    }
+
+    .brand-logo span{
+      position:relative;
+      z-index:2;
+      font-family:"Oswald",sans-serif;
+      font-size:24px;
+      font-weight:700;
+      color:white;
+      letter-spacing:.04em;
+    }
+
+    .brand-text{
+      display:grid;
+      gap:4px;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-text strong{
+      font-family:"Oswald",sans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+
+    .brand-text small{
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    .menu-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .menu a{
+      font-family:"Oswald",sans-serif;
+      font-size:16px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:#dbe6f0;
+      transition:.2s;
+    }
+
+    .menu a:hover{color:var(--blue2)}
+
+    .header-cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .mobile-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:12px;
+      background:rgba(255,255,255,.06);
+      color:white;
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:94vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:
+        linear-gradient(180deg, rgba(4,6,10,.78), rgba(4,6,10,.90)),
+        radial-gradient(circle at 50% 20%, rgba(79,209,255,.10), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(75,92,255,.10), transparent 35%);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(1000px,100%);
+      margin:0 auto;
+      padding:120px 0 100px;
+      text-align:center;
+      display:grid;
+      gap:18px;
+    }
+
+    .hero-logo-wrap{
+      width:min(180px,44vw);
+      margin:0 auto 8px;
+      position:relative;
+      animation:floatHero 4s ease-in-out infinite;
+    }
+
+    .hero-logo-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-16px;
+      border-radius:30px;
+      background:linear-gradient(135deg, rgba(29,168,255,.20), rgba(75,92,255,.18));
+      filter:blur(12px);
+      z-index:0;
+    }
+
+    .hero-logo{
+      position:relative;
+      z-index:1;
+      width:100%;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    .hero-title{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(46px,9vw,108px);
+      line-height:.88;
+      letter-spacing:.03em;
+      text-shadow:0 10px 28px rgba(0,0,0,.38);
+    }
+
+    .hero-title .line-2{
+      display:block;
+      background:linear-gradient(135deg,var(--silver),var(--blue2),var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:none;
+    }
+
+    .hero-sub{
+      font-size:clamp(18px,2.2vw,26px);
+      line-height:1.5;
+      color:#d7e2ec;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .hero-sub span{color:var(--blue2)}
+
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .hero-info{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-weight:800;
+      margin-top:6px;
+    }
+
+    .hero-info b{color:white}
+
+    /* GALLERY */
+    .gallery-section{
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg,#05070b 0%,#091018 100%);
+    }
+
+    .gallery-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+    .gallery-text{
+      display:grid;
+      gap:10px;
+    }
+
+    .gallery-text h2{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(32px,5vw,56px);
+      line-height:.95;
+    }
+
+    .gallery-text p{
+      max-width:800px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .slider-controls{
+      display:flex;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .slider-btn{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      color:white;
+      font-size:24px;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.2s;
+    }
+
+    .slider-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(29,168,255,.14);
+    }
+
+    .work-slider{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:calc((100% - 42px)/4);
+      gap:14px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+      padding:4px 2px 12px;
+    }
+
+    .work-slider::-webkit-scrollbar{display:none}
+
+    .work-card{
+      position:relative;
+      overflow:hidden;
+      min-height:310px;
+      border-radius:22px;
+      background:#0f161d;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+    }
+
+    .work-card img{
+      width:100%;
+      height:310px;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .work-card:hover img{transform:scale(1.05)}
+
+    .work-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(6,8,11,.85), rgba(6,8,11,.08) 55%);
+      pointer-events:none;
+    }
+
+    .work-caption{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      z-index:2;
+      display:grid;
+      gap:4px;
+    }
+
+    .work-caption strong{
+      font-family:"Oswald",sans-serif;
+      font-size:20px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .work-caption span{
+      font-size:12px;
+      color:#d5dee4;
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    /* CARDS */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 14px 38px rgba(0,0,0,.20);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 20% 0%, rgba(29,168,255,.08), transparent 30%);
+      pointer-events:none;
+    }
+
+    .icon{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--blue),var(--accent2));
+      color:white;
+      font-size:24px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .card h3{
+      font-family:"Oswald",sans-serif;
+      font-size:28px;
+      text-transform:uppercase;
+      line-height:1;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+      margin-bottom:16px;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      list-style:none;
+      margin-top:12px;
+      margin-bottom:18px;
+    }
+
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#edf3f7;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    .list li::before{
+      content:"✦";
+      color:var(--blue2);
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .map-card,.form-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .map-info,.form-box{
+      padding:24px;
+    }
+
+    .map-info h3,.form-box h3{
+      font-family:"Oswald",sans-serif;
+      font-size:34px;
+      text-transform:uppercase;
+      line-height:1;
+      margin:12px 0;
+    }
+
+    .map-info p,.form-box p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .map-frame{
+      width:100%;
+      height:380px;
+      border:0;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .full{grid-column:1/-1}
+
+    input,select,textarea{
+      width:100%;
+      min-height:52px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.11);
+      background:#0d151c;
+      color:white;
+      padding:0 16px;
+      font-size:14px;
+      outline:none;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+      padding:14px 16px;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(29,168,255,.45);
+      box-shadow:0 0 0 4px rgba(29,168,255,.10);
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:44px 0 90px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:22px;
+      padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-box h4{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .footer-box p,
+    .footer-box li,
+    .footer-box a{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .footer-box ul{
+      list-style:none;
+      display:grid;
+      gap:6px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* FLOAT WA */
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:1200;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--wa),var(--wa2));
+      color:white;
+      box-shadow:0 18px 40px rgba(37,211,102,.35);
+      animation:floatBtn 2.8s ease-in-out infinite;
+    }
+
+    .wa-float svg{
+      width:32px;
+      height:32px;
+    }
+
+    @keyframes spin{
+      to{transform:rotate(360deg)}
+    }
+
+    @keyframes floatLogo{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-4px)}
+    }
+
+    @keyframes floatHero{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-7px)}
+    }
+
+    @keyframes floatBtn{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-5px)}
+    }
+
+    @media (max-width:1050px){
+      .menu{
+        position:absolute;
+        top:82px;
+        left:12px;
+        right:12px;
+        background:#0b1218;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:18px;
+        box-shadow:var(--shadow);
+        padding:16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .menu.open{display:flex}
+      .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .header-cta{display:none}
+      .grid-3,.grid-2,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .work-slider{grid-auto-columns:calc((100% - 14px)/2)}
+      .map-frame{height:320px}
+    }
+
+    @media (max-width:760px){
+      .section{padding:60px 0}
+      .hero{min-height:auto}
+      .hero-content{padding:110px 0 82px}
+      .hero-title{font-size:44px}
+      .hero-sub{font-size:18px}
+      .work-slider{grid-auto-columns:84%}
+      .work-card img,.work-card{height:290px;min-height:290px}
+      .form-grid{grid-template-columns:1fr}
+      .brand-text strong{font-size:19px}
+      .brand-text small{font-size:9px}
+      .brand-logo{width:56px;height:56px}
+      .brand-logo span{font-size:21px}
+    }
+
+    @media (max-width:520px){
+      .hero-logo-wrap{width:150px}
+      .hero-title{font-size:38px}
+      .hero-actions .btn{width:100%}
+      .footer-bottom{display:grid}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo"><span>MV</span></div>
+        <div class="brand-text">
+          <strong>Multiserviabc</strong>
+          <small>Solução Inteligente</small>
+        </div>
+      </a>
+
+      <div class="menu-wrap">
+        <nav class="menu" id="menu">
+          <a href="#inicio">Início</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#mapa">Endereço</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="header-cta">
+          <button class="btn btn-wa" onclick="abrirWhatsApp('Botão do topo', 'Quero solicitar um orçamento.')">WhatsApp</button>
+          <a class="btn btn-primary" href="#contato">Agendar</a>
+        </div>
+
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="assets/logo.jpg" alt="Logo Multiserviabc">
+          </div>
+
+          <h1 class="hero-title">
+            Multiserviabc
+            <span class="line-2">Box, Janelas & Espelhos</span>
+          </h1>
+
+          <p class="hero-sub">
+            Trabalhamos com instalação de <span>box, janelas, espelhos e outros serviços</span>, entregando acabamento profissional, atendimento rápido e soluções inteligentes para sua casa ou empresa.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-wa" onclick="abrirWhatsApp('Hero WhatsApp', 'Olá, quero solicitar um orçamento para box, janelas, espelhos ou outro serviço.')">Chamar no WhatsApp</button>
+            <a class="btn btn-outline" href="#galeria">Ver Trabalhos</a>
+            <a class="btn btn-primary" href="#contato">Agendar Serviço</a>
+          </div>
+
+          <div class="hero-info">
+            <span><b>São Bernardo do Campo</b></span>
+            <span>•</span>
+            <span>Box • Janelas • Espelhos • Outros</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="container">
+        <div class="gallery-head">
+          <div class="gallery-text">
+            <span class="tag">Galeria premium</span>
+            <h2>Nossos <span class="gradient">trabalhos</span></h2>
+            <p>
+              Aqui entram as 12 fotos dos trabalhos realizados pela Multiserviabc.
+              O carrossel passa para o lado automaticamente e também pode ser controlado pelas setas.
+            </p>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" onclick="moveSlider(-1)">‹</button>
+            <button class="slider-btn" onclick="moveSlider(1)">›</button>
+          </div>
+        </div>
+
+        <div class="work-slider" id="workSlider">
+          <article class="work-card"><img src="assets/foto-1.jpg" alt="Trabalho 1"><div class="work-caption"><strong>Box</strong><span>Instalação com acabamento profissional.</span></div></article>
+          <article class="work-card"><img src="assets/foto-2.jpg" alt="Trabalho 2"><div class="work-caption"><strong>Janelas</strong><span>Soluções sob medida para o ambiente.</span></div></article>
+          <article class="work-card"><img src="assets/foto-3.jpg" alt="Trabalho 3"><div class="work-caption"><strong>Espelhos</strong><span>Visual moderno e elegante.</span></div></article>
+          <article class="work-card"><img src="assets/foto-4.jpg" alt="Trabalho 4"><div class="work-caption"><strong>Vidros</strong><span>Instalação limpa e eficiente.</span></div></article>
+          <article class="work-card"><img src="assets/foto-5.jpg" alt="Trabalho 5"><div class="work-caption"><strong>Box Sob Medida</strong><span>Projeto ideal para seu espaço.</span></div></article>
+          <article class="work-card"><img src="assets/foto-6.jpg" alt="Trabalho 6"><div class="work-caption"><strong>Ambientes</strong><span>Funcionalidade e beleza.</span></div></article>
+          <article class="work-card"><img src="assets/foto-7.jpg" alt="Trabalho 7"><div class="work-caption"><strong>Acabamento</strong><span>Detalhes bem executados.</span></div></article>
+          <article class="work-card"><img src="assets/foto-8.jpg" alt="Trabalho 8"><div class="work-caption"><strong>Projetos</strong><span>Serviços residenciais e comerciais.</span></div></article>
+          <article class="work-card"><img src="assets/foto-9.jpg" alt="Trabalho 9"><div class="work-caption"><strong>Portfólio</strong><span>Qualidade em cada instalação.</span></div></article>
+          <article class="work-card"><img src="assets/foto-10.jpg" alt="Trabalho 10"><div class="work-caption"><strong>Instalações</strong><span>Atendimento com precisão.</span></div></article>
+          <article class="work-card"><img src="assets/foto-11.jpg" alt="Trabalho 11"><div class="work-caption"><strong>Espaços</strong><span>Soluções modernas em vidro.</span></div></article>
+          <article class="work-card"><img src="assets/foto-12.jpg" alt="Trabalho 12"><div class="work-caption"><strong>Multiserviabc</strong><span>Solução inteligente para seu projeto.</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-top">
+          <span class="tag">Serviços</span>
+          <h2 class="section-title">O que a <span>Multiserviabc</span> faz</h2>
+          <p class="section-sub">
+            Serviços com foco em qualidade, acabamento e boa apresentação para valorizar o ambiente e transmitir mais confiança ao cliente.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">🚿</div>
+            <h3>Box para Banheiro</h3>
+            <p>Instalação de box com acabamento limpo e visual moderno para deixar seu banheiro mais bonito e funcional.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Box', 'Olá, tenho interesse em instalação de box.')">Quero esse serviço</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🪟</div>
+            <h3>Janelas</h3>
+            <p>Instalação de janelas e soluções em vidro para ambientes residenciais e comerciais com ótimo acabamento.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Janelas', 'Olá, tenho interesse em instalação de janelas.')">Quero esse serviço</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🪞</div>
+            <h3>Espelhos</h3>
+            <p>Espelhos para diferentes ambientes, trazendo amplitude, elegância e um visual mais sofisticado.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Espelhos', 'Olá, tenho interesse em instalação de espelhos.')">Quero esse serviço</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <span class="tag">Sobre</span>
+            <h3 style="margin-top:12px;">Multiserviabc</h3>
+            <p>
+              Empresa localizada em São Bernardo do Campo, trabalhando com instalação de box, janelas, espelhos e outros serviços. 
+              A proposta do site é apresentar os trabalhos, gerar confiança e facilitar o contato rápido pelo WhatsApp.
+            </p>
+
+            <ul class="list">
+              <li>Instalação de box</li>
+              <li>Instalação de janelas</li>
+              <li>Espelhos e outros serviços</li>
+              <li>Atendimento em São Bernardo do Campo</li>
+              <li>Orçamento rápido e atendimento direto</li>
+            </ul>
+
+            <button class="btn btn-primary" onclick="abrirWhatsApp('Sobre - Multiserviabc', 'Olá, quero saber mais sobre os serviços da Multiserviabc.')">Falar com a empresa</button>
+          </div>
+
+          <div class="card">
+            <span class="tag">Diferenciais</span>
+            <h3 style="margin-top:12px;">Por que escolher</h3>
+            <p>
+              Uma apresentação premium para destacar melhor a empresa, mostrar os trabalhos já feitos e facilitar a conversão de clientes.
+            </p>
+
+            <ul class="list">
+              <li>Visual profissional e moderno</li>
+              <li>Carrossel automático com os trabalhos</li>
+              <li>Botões rápidos de contato</li>
+              <li>Mapa no endereço para facilitar localização</li>
+              <li>Site totalmente adaptado para celular</li>
+            </ul>
+
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Diferenciais', 'Olá, quero solicitar um orçamento agora.')">Pedir orçamento</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mapa">
+      <div class="container contact-grid">
+        <div class="map-card">
+          <div class="map-info">
+            <span class="tag">Endereço</span>
+            <h3>Veja no <span class="gradient">mapa</span></h3>
+            <p>
+              Flávio Fongaro 456<br>
+              São Bernardo do Campo - SP
+            </p>
+          </div>
+
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Fl%C3%A1vio%20Fongaro%20456%20S%C3%A3o%20Bernardo%20do%20Campo%20SP&output=embed">
+          </iframe>
+        </div>
+
+        <div class="form-card" id="contato">
+          <div class="form-box">
+            <span class="tag">Contato rápido</span>
+            <h3>Agende ou peça <span class="gradient">orçamento</span></h3>
+            <p>
+              Preencha os dados e o WhatsApp abrirá com uma mensagem pronta para a Multiserviabc.
+            </p>
+
+            <form class="form-grid" onsubmit="enviarFormulario(event)">
+              <input type="text" name="nome" placeholder="Seu nome" required>
+              <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
+
+              <select name="servico" required>
+                <option value="">Tipo de serviço</option>
+                <option>Box</option>
+                <option>Janelas</option>
+                <option>Espelhos</option>
+                <option>Outro serviço</option>
+              </select>
+
+              <input type="text" name="bairro" placeholder="Bairro / Cidade">
+
+              <textarea class="full" name="mensagem" placeholder="Descreva o que você precisa..."></textarea>
+
+              <button class="btn btn-wa full" type="submit">Enviar para WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-box">
+            <h4>Multiserviabc</h4>
+            <p>
+              Trabalhamos com instalação de box, janelas, espelhos e outros serviços, oferecendo solução inteligente com boa apresentação e atendimento prático.
+            </p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#mapa">Endereço</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box">
+            <h4>Contato</h4>
+            <ul>
+              <li>WhatsApp: (11) 97185-6987</li>
+              <li>E-mail: multiserviabc@hotmail.com</li>
+              <li>Endereço: Flávio Fongaro 456</li>
+              <li>São Bernardo do Campo - SP</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Multiserviabc - Todos os direitos reservados</p>
+          <p>Site criado para apresentação e captação de clientes</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="wa-float" href="#" onclick="abrirWhatsApp('Botão flutuante', 'Olá, quero solicitar um orçamento.')" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16.02 3.2A12.68 12.68 0 0 0 5.09 22.3L3.2 28.8l6.68-1.76a12.62 12.62 0 0 0 6.12 1.56h.01A12.7 12.7 0 0 0 16.02 3.2Zm7.47 17.94c-.31.88-1.56 1.62-2.22 1.73-.57.09-1.3.13-2.1-.13-.48-.15-1.1-.35-1.89-.69-3.33-1.44-5.5-4.8-5.67-5.02-.17-.22-1.35-1.8-1.35-3.43 0-1.63.86-2.44 1.16-2.77.3-.33.66-.41.88-.41h.63c.2.01.48-.08.75.57.29.7.98 2.4 1.07 2.57.09.17.15.37.03.59-.11.22-.17.36-.34.56-.17.2-.36.45-.51.61-.17.17-.35.36-.15.71.2.35.88 1.45 1.89 2.35 1.3 1.16 2.39 1.52 2.74 1.69.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.78-.17.32.12 2.03.96 2.38 1.13.35.17.58.26.67.4.09.14.09.81-.22 1.69Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP = "5511971856987";
+
+    function toggleMenu(){
+      document.getElementById("menu").classList.toggle("open");
+    }
+
+    document.querySelectorAll(".menu a").forEach(link=>{
+      link.addEventListener("click",()=>{
+        document.getElementById("menu").classList.remove("open");
+      });
+    });
+
+    function abrirWhatsApp(botao, interesse){
+      const texto =
+`Olá, vim pelo site da Multiserviabc.
+
+Botão clicado: ${botao}
+Interesse: ${interesse}`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+
+    function enviarFormulario(event){
+      event.preventDefault();
+      const form = event.target;
+
+      const nome = form.nome.value.trim();
+      const telefone = form.telefone.value.trim();
+      const servico = form.servico.value.trim();
+      const bairro = form.bairro.value.trim();
+      const mensagem = form.mensagem.value.trim();
+
+      const texto =
+`Olá, vim pelo site da Multiserviabc e quero um orçamento.
+
+Nome: ${nome}
+WhatsApp: ${telefone}
+Serviço: ${servico}
+Bairro/Cidade: ${bairro}
+Mensagem: ${mensagem}`;
+
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+
+    const slider = document.getElementById("workSlider");
+    let autoSlide;
+
+    function moveSlider(direction){
+      const amount = Math.min(slider.clientWidth * 0.85, 420);
+      slider.scrollBy({ left: amount * direction, behavior: "smooth" });
+    }
+
+    function startAutoSlide(){
+      stopAutoSlide();
+      autoSlide = setInterval(()=>{
+        slider.scrollLeft += 2.1;
+        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 3){
+          slider.scrollLeft = 0;
+        }
+      }, 16);
+    }
+
+    function stopAutoSlide(){
+      clearInterval(autoSlide);
+    }
+
+    startAutoSlide();
+
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
+    slider.addEventListener("touchstart", stopAutoSlide, { passive:true });
+    slider.addEventListener("touchend", startAutoSlide);
+  </script>
+</body>
+</html>
