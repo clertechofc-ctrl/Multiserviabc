@@ -3,785 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multiserviabc | Box, Janelas, Espelhos e Soluções em Vidro</title>
+  <title>Multiserviabc | Box, Janelas, Espelhos e Soluções Inteligentes</title>
   <meta name="description" content="Multiserviabc em São Bernardo do Campo. Instalação de box, janelas, espelhos e outros serviços. Orçamento rápido pelo WhatsApp." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#05070b;
-      --bg2:#0b1118;
-      --panel:#101821;
-      --panel2:#151f29;
-      --line:rgba(255,255,255,.08);
-      --text:#f5f8fb;
-      --muted:#a9b8c7;
-      --blue:#1da8ff;
-      --blue2:#4fd1ff;
-      --silver:#dfe7ef;
-      --accent:#00c6ff;
-      --accent2:#4b5cff;
+      --white:#ffffff;
+      --soft:#f4f8ff;
+      --soft2:#eef5ff;
+      --text:#101827;
+      --muted:#5d6b7c;
+      --blue:#155cff;
+      --blue2:#1da8ff;
+      --cyan:#58d9ff;
+      --line:rgba(21,92,255,.12);
       --wa:#25d366;
       --wa2:#159a39;
-      --shadow:0 24px 70px rgba(0,0,0,.45);
-      --radius:24px;
+      --shadow:0 22px 60px rgba(21,92,255,.16);
+      --shadow2:0 14px 34px rgba(16,24,39,.10);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
+    *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       font-family:"Inter",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(77,153,255,.09), transparent 30%),
-        radial-gradient(circle at top right, rgba(0,198,255,.08), transparent 28%),
-        linear-gradient(180deg,#04060a 0%, #0a1017 45%, #05070b 100%);
+        radial-gradient(circle at 12% 0%, rgba(29,168,255,.14), transparent 28%),
+        radial-gradient(circle at 88% 4%, rgba(21,92,255,.13), transparent 30%),
+        linear-gradient(180deg,#ffffff 0%,#f4f8ff 46%,#ffffff 100%);
       overflow-x:hidden;
     }
 
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
-    button,input,textarea,select{font-family:inherit}
+    button,input,select,textarea{font-family:inherit}
 
-    .container{
-      width:min(1180px, calc(100% - 24px));
-      margin:0 auto;
-    }
-
-    .section{
-      padding:78px 0;
-    }
+    .container{width:min(1180px, calc(100% - 24px));margin:0 auto}
+    .section{padding:76px 0}
 
     .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(29,168,255,.10);
-      border:1px solid rgba(29,168,255,.24);
-      color:#8fddff;
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+      display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;
+      background:rgba(29,168,255,.10);border:1px solid rgba(21,92,255,.14);
+      color:#155cff;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;
     }
 
-    .section-top{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      gap:12px;
-      margin-bottom:28px;
-    }
-
-    .section-title{
-      font-family:"Oswald",sans-serif;
-      text-transform:uppercase;
-      font-size:clamp(34px,5vw,62px);
-      line-height:.95;
-      letter-spacing:.03em;
-    }
-
-    .section-title span,
-    .gradient{
-      background:linear-gradient(135deg,var(--silver),var(--blue2),var(--accent2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .section-sub{
-      max-width:820px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.8;
-    }
+    .section-top{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px}
+    .section-title{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:clamp(34px,5vw,64px);line-height:.95;letter-spacing:.035em;color:#101827}
+    .gradient,.section-title span{background:linear-gradient(135deg,#155cff,#1da8ff,#58d9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .section-sub{max-width:820px;color:var(--muted);font-size:15px;line-height:1.8}
 
     .btn{
-      position:relative;
-      overflow:hidden;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:54px;
-      padding:14px 24px;
-      border:none;
-      border-radius:14px;
-      cursor:pointer;
-      font-family:"Oswald",sans-serif;
-      font-size:16px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      transition:.25s ease;
-      white-space:nowrap;
+      position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:54px;padding:14px 24px;border:none;border-radius:14px;cursor:pointer;
+      font-family:"Oswald",sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+      transition:.25s ease;white-space:nowrap;
     }
-
     .btn:hover{transform:translateY(-2px)}
-
-    .btn::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg, transparent, rgba(255,255,255,.22), transparent);
-      transform:translateX(-130%);
-      transition:.7s ease;
-    }
-
+    .btn::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.34),transparent);transform:translateX(-130%);transition:.7s ease}
     .btn:hover::before{transform:translateX(130%)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue2),var(--cyan));color:white;box-shadow:0 14px 32px rgba(29,168,255,.24)}
+    .btn-wa{background:linear-gradient(135deg,var(--wa),var(--wa2));color:white;box-shadow:0 14px 32px rgba(37,211,102,.22)}
+    .btn-outline{background:#ffffff;color:#155cff;border:1px solid rgba(21,92,255,.18);box-shadow:0 12px 28px rgba(21,92,255,.08)}
+    .btn-light{background:linear-gradient(135deg,#ffffff,#edf6ff);color:#155cff;border:1px solid rgba(21,92,255,.14);box-shadow:0 12px 28px rgba(21,92,255,.10)}
 
-    .btn-primary{
-      background:linear-gradient(135deg,var(--accent2),var(--blue));
-      color:white;
-      box-shadow:0 14px 32px rgba(29,168,255,.22);
-    }
-
-    .btn-wa{
-      background:linear-gradient(135deg,var(--wa),var(--wa2));
-      color:white;
-      box-shadow:0 14px 32px rgba(37,211,102,.24);
-    }
-
-    .btn-outline{
-      background:rgba(255,255,255,.04);
-      color:white;
-      border:1px solid rgba(255,255,255,.12);
-    }
-
-    /* HEADER */
-    .header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(5,7,11,.84);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(255,255,255,.07);
-    }
-
-    .nav{
-      min-height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
-
-    .brand-logo{
-      width:60px;
-      height:60px;
-      border-radius:18px;
-      position:relative;
-      overflow:hidden;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,#111822,#253242);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--shadow);
-      animation:floatLogo 3.2s ease-in-out infinite;
-    }
-
-    .brand-logo::before{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background:conic-gradient(from 0deg, transparent, rgba(79,209,255,.5), transparent 35%, rgba(75,92,255,.5), transparent 75%);
-      animation:spin 7s linear infinite;
-    }
-
-    .brand-logo::after{
-      content:"";
-      position:absolute;
-      inset:4px;
-      border-radius:14px;
-      background:linear-gradient(135deg,#0b1218,#17232e);
-    }
-
-    .brand-logo span{
-      position:relative;
-      z-index:2;
-      font-family:"Oswald",sans-serif;
-      font-size:24px;
-      font-weight:700;
-      color:white;
-      letter-spacing:.04em;
-    }
-
-    .brand-text{
-      display:grid;
-      gap:4px;
-      line-height:1;
-      min-width:0;
-    }
-
-    .brand-text strong{
-      font-family:"Oswald",sans-serif;
-      font-size:24px;
-      text-transform:uppercase;
-      letter-spacing:.03em;
-    }
-
-    .brand-text small{
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--muted);
-      font-weight:800;
-    }
-
-    .menu-wrap{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
-    .menu{
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
-
-    .menu a{
-      font-family:"Oswald",sans-serif;
-      font-size:16px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      color:#dbe6f0;
-      transition:.2s;
-    }
-
+    .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(21,92,255,.10);box-shadow:0 10px 30px rgba(16,24,39,.05)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{width:62px;height:62px;border-radius:50%;overflow:hidden;background:#fff;border:2px solid rgba(21,92,255,.16);box-shadow:0 0 0 5px rgba(29,168,255,.10),0 16px 34px rgba(29,168,255,.16);animation:floatLogo 3.4s ease-in-out infinite}
+    .brand-logo img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .brand-text{display:grid;gap:4px;line-height:1;min-width:0}
+    .brand-text strong{font-family:"Oswald",sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:#101827}
+    .brand-text small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#5d6b7c;font-weight:800}
+    .menu-wrap{display:flex;align-items:center;gap:14px}
+    .menu{display:flex;align-items:center;gap:18px}
+    .menu a{font-family:"Oswald",sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#263447;transition:.2s}
     .menu a:hover{color:var(--blue2)}
+    .header-cta{display:flex;gap:10px;align-items:center}
+    .mobile-toggle{display:none;width:46px;height:46px;border:none;border-radius:12px;background:rgba(21,92,255,.08);color:#155cff;font-size:22px;cursor:pointer}
 
-    .header-cta{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
+    .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:#f7fbff}
+    .hero-bg{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-bg img{width:min(860px,120vw);height:auto;opacity:.16;filter:saturate(1.08);animation:floatHeroBg 8s ease-in-out infinite}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(244,248,255,.88)),radial-gradient(circle at 50% 22%,rgba(88,217,255,.18),transparent 30%),radial-gradient(circle at 82% 42%,rgba(21,92,255,.16),transparent 38%)}
+    .hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(21,92,255,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(21,92,255,.045) 1px, transparent 1px);background-size:40px 40px;opacity:.65;z-index:1;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+    .hero-content{position:relative;z-index:2;width:min(1050px,100%);margin:0 auto;padding:130px 0 100px;text-align:center;display:grid;gap:18px}
+    .hero-kicker{display:inline-flex;justify-self:center;align-items:center;gap:8px;background:white;border:1px solid rgba(21,92,255,.14);border-radius:999px;padding:11px 16px;color:#155cff;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.12em;box-shadow:var(--shadow2)}
+    .hero-kicker::before{content:"";width:9px;height:9px;border-radius:50%;background:#25d366;box-shadow:0 0 0 6px rgba(37,211,102,.12)}
+    .hero-title{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:clamp(48px,9vw,118px);line-height:.88;letter-spacing:.035em;color:#101827;text-shadow:0 10px 30px rgba(21,92,255,.10)}
+    .hero-title .line-2{display:block;background:linear-gradient(135deg,#155cff,#1da8ff,#58d9ff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+    .hero-sub{font-size:clamp(18px,2.2vw,26px);line-height:1.5;color:#415064;max-width:900px;margin:0 auto}
+    .hero-sub span{color:#155cff;font-weight:800}
+    .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+    .hero-info{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;color:#5d6b7c;font-size:13px;text-transform:uppercase;letter-spacing:.10em;font-weight:800;margin-top:6px}
+    .hero-info b{color:#101827}
 
-    .mobile-toggle{
-      display:none;
-      width:46px;
-      height:46px;
-      border:none;
-      border-radius:12px;
-      background:rgba(255,255,255,.06);
-      color:white;
-      font-size:22px;
-      cursor:pointer;
-    }
-
-    /* HERO */
-    .hero{
-      position:relative;
-      min-height:94vh;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      background:
-        linear-gradient(180deg, rgba(4,6,10,.78), rgba(4,6,10,.90)),
-        radial-gradient(circle at 50% 20%, rgba(79,209,255,.10), transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(75,92,255,.10), transparent 35%);
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      width:min(1000px,100%);
-      margin:0 auto;
-      padding:120px 0 100px;
-      text-align:center;
-      display:grid;
-      gap:18px;
-    }
-
-    .hero-logo-wrap{
-      width:min(180px,44vw);
-      margin:0 auto 8px;
-      position:relative;
-      animation:floatHero 4s ease-in-out infinite;
-    }
-
-    .hero-logo-wrap::before{
-      content:"";
-      position:absolute;
-      inset:-16px;
-      border-radius:30px;
-      background:linear-gradient(135deg, rgba(29,168,255,.20), rgba(75,92,255,.18));
-      filter:blur(12px);
-      z-index:0;
-    }
-
-    .hero-logo{
-      position:relative;
-      z-index:1;
-      width:100%;
-      border-radius:26px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--shadow);
-      background:#fff;
-    }
-
-    .hero-title{
-      font-family:"Oswald",sans-serif;
-      text-transform:uppercase;
-      font-size:clamp(46px,9vw,108px);
-      line-height:.88;
-      letter-spacing:.03em;
-      text-shadow:0 10px 28px rgba(0,0,0,.38);
-    }
-
-    .hero-title .line-2{
-      display:block;
-      background:linear-gradient(135deg,var(--silver),var(--blue2),var(--accent2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-      text-shadow:none;
-    }
-
-    .hero-sub{
-      font-size:clamp(18px,2.2vw,26px);
-      line-height:1.5;
-      color:#d7e2ec;
-      max-width:900px;
-      margin:0 auto;
-    }
-
-    .hero-sub span{color:var(--blue2)}
-
-    .hero-actions{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:8px;
-    }
-
-    .hero-info{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:12px;
-      color:var(--muted);
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:.10em;
-      font-weight:800;
-      margin-top:6px;
-    }
-
-    .hero-info b{color:white}
-
-    /* GALLERY */
-    .gallery-section{
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      background:linear-gradient(180deg,#05070b 0%,#091018 100%);
-    }
-
-    .gallery-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:20px;
-    }
-
-    .gallery-text{
-      display:grid;
-      gap:10px;
-    }
-
-    .gallery-text h2{
-      font-family:"Oswald",sans-serif;
-      text-transform:uppercase;
-      font-size:clamp(32px,5vw,56px);
-      line-height:.95;
-    }
-
-    .gallery-text p{
-      max-width:800px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.8;
-    }
-
-    .slider-controls{
-      display:flex;
-      gap:10px;
-      flex-shrink:0;
-    }
-
-    .slider-btn{
-      width:46px;
-      height:46px;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,.06);
-      color:white;
-      font-size:24px;
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,.08);
-      transition:.2s;
-    }
-
-    .slider-btn:hover{
-      transform:translateY(-2px);
-      background:rgba(29,168,255,.14);
-    }
-
-    .work-slider{
-      display:grid;
-      grid-auto-flow:column;
-      grid-auto-columns:calc((100% - 42px)/4);
-      gap:14px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-      padding:4px 2px 12px;
-    }
-
+    .gallery-section{border-top:1px solid rgba(21,92,255,.10);border-bottom:1px solid rgba(21,92,255,.10);background:linear-gradient(180deg,#ffffff 0%,#f3f8ff 100%)}
+    .gallery-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:20px}
+    .gallery-text{display:grid;gap:10px}
+    .gallery-text h2{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:clamp(32px,5vw,58px);line-height:.95;color:#101827}
+    .gallery-text p{max-width:800px;color:var(--muted);font-size:14px;line-height:1.8}
+    .slider-controls{display:flex;gap:10px;flex-shrink:0}
+    .slider-btn{width:46px;height:46px;border:none;border-radius:50%;background:white;color:#155cff;font-size:24px;cursor:pointer;border:1px solid rgba(21,92,255,.14);box-shadow:var(--shadow2);transition:.2s}
+    .slider-btn:hover{transform:translateY(-2px);background:#eaf6ff}
+    .work-slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 42px)/4);gap:14px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:4px 2px 12px}
     .work-slider::-webkit-scrollbar{display:none}
-
-    .work-card{
-      position:relative;
-      overflow:hidden;
-      min-height:310px;
-      border-radius:22px;
-      background:#0f161d;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 12px 30px rgba(0,0,0,.28);
-    }
-
-    .work-card img{
-      width:100%;
-      height:310px;
-      object-fit:cover;
-      transition:transform .45s ease;
-    }
-
+    .work-card{position:relative;overflow:hidden;min-height:310px;border-radius:22px;background:#fff;border:1px solid rgba(21,92,255,.12);box-shadow:var(--shadow2)}
+    .work-card img{width:100%;height:310px;object-fit:cover;transition:transform .45s ease}
     .work-card:hover img{transform:scale(1.05)}
+    .work-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(16,24,39,.68), rgba(16,24,39,.02) 55%);pointer-events:none}
+    .work-caption{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;display:grid;gap:4px;color:white}
+    .work-caption strong{font-family:"Oswald",sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+    .work-caption span{font-size:12px;color:#edf7ff;font-weight:700;line-height:1.45}
 
-    .work-card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(6,8,11,.85), rgba(6,8,11,.08) 55%);
-      pointer-events:none;
-    }
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .card{background:white;border:1px solid rgba(21,92,255,.12);border-radius:24px;padding:24px;box-shadow:var(--shadow2);position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 0%,rgba(29,168,255,.10),transparent 32%);pointer-events:none}
+    .icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffffff,#58d9ff,#155cff);color:#07101c;font-size:24px;font-weight:900;margin-bottom:14px;box-shadow:0 12px 26px rgba(29,168,255,.20)}
+    .card h3{font-family:"Oswald",sans-serif;font-size:28px;text-transform:uppercase;line-height:1;margin-bottom:12px;color:#101827}
+    .card p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:16px}
+    .list{display:grid;gap:10px;list-style:none;margin-top:12px;margin-bottom:18px}
+    .list li{display:flex;gap:10px;align-items:flex-start;color:#263447;font-size:14px;line-height:1.6;font-weight:700}
+    .list li::before{content:"✦";color:var(--blue2);font-weight:900;margin-top:1px}
 
-    .work-caption{
-      position:absolute;
-      left:14px;
-      right:14px;
-      bottom:14px;
-      z-index:2;
-      display:grid;
-      gap:4px;
-    }
-
-    .work-caption strong{
-      font-family:"Oswald",sans-serif;
-      font-size:20px;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      line-height:1;
-    }
-
-    .work-caption span{
-      font-size:12px;
-      color:#d5dee4;
-      font-weight:700;
-      line-height:1.45;
-    }
-
-    /* CARDS */
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:0 14px 38px rgba(0,0,0,.20);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:radial-gradient(circle at 20% 0%, rgba(29,168,255,.08), transparent 30%);
-      pointer-events:none;
-    }
-
-    .icon{
-      width:56px;
-      height:56px;
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,var(--blue),var(--accent2));
-      color:white;
-      font-size:24px;
-      font-weight:900;
-      margin-bottom:14px;
-    }
-
-    .card h3{
-      font-family:"Oswald",sans-serif;
-      font-size:28px;
-      text-transform:uppercase;
-      line-height:1;
-      margin-bottom:12px;
-    }
-
-    .card p{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.8;
-      margin-bottom:16px;
-    }
-
-    .list{
-      display:grid;
-      gap:10px;
-      list-style:none;
-      margin-top:12px;
-      margin-bottom:18px;
-    }
-
-    .list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:#edf3f7;
-      font-size:14px;
-      line-height:1.6;
-      font-weight:600;
-    }
-
-    .list li::before{
-      content:"✦";
-      color:var(--blue2);
-      font-weight:900;
-      margin-top:1px;
-    }
-
-    /* CONTACT */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .map-card,.form-card{
-      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .map-info,.form-box{
-      padding:24px;
-    }
-
-    .map-info h3,.form-box h3{
-      font-family:"Oswald",sans-serif;
-      font-size:34px;
-      text-transform:uppercase;
-      line-height:1;
-      margin:12px 0;
-    }
-
-    .map-info p,.form-box p{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.8;
-    }
-
-    .map-frame{
-      width:100%;
-      height:380px;
-      border:0;
-    }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:18px;
-    }
-
+    .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:stretch}
+    .map-card,.form-card{background:white;border:1px solid rgba(21,92,255,.12);border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+    .map-info,.form-box{padding:24px}
+    .map-info h3,.form-box h3{font-family:"Oswald",sans-serif;font-size:34px;text-transform:uppercase;line-height:1;margin:12px 0;color:#101827}
+    .map-info p,.form-box p{color:var(--muted);font-size:14px;line-height:1.8}
+    .map-frame{width:100%;height:380px;border:0}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
     .full{grid-column:1/-1}
+    input,select,textarea{width:100%;min-height:52px;border-radius:14px;border:1px solid rgba(21,92,255,.14);background:#f7fbff;color:#101827;padding:0 16px;font-size:14px;outline:none}
+    textarea{min-height:120px;resize:vertical;padding:14px 16px}
+    input:focus,select:focus,textarea:focus{border-color:rgba(29,168,255,.55);box-shadow:0 0 0 4px rgba(29,168,255,.12)}
 
-    input,select,textarea{
-      width:100%;
-      min-height:52px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.11);
-      background:#0d151c;
-      color:white;
-      padding:0 16px;
-      font-size:14px;
-      outline:none;
-    }
+    .footer{padding:44px 0 90px;background:#f7fbff}
+    .footer-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:22px;padding-top:24px;border-top:1px solid rgba(21,92,255,.12)}
+    .footer-box h4{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:22px;margin-bottom:10px;color:#101827}
+    .footer-box p,.footer-box li,.footer-box a{color:var(--muted);font-size:14px;line-height:1.8}
+    .footer-box ul{list-style:none;display:grid;gap:6px}
+    .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(21,92,255,.12);color:var(--muted);font-size:13px}
 
-    textarea{
-      min-height:120px;
-      resize:vertical;
-      padding:14px 16px;
-    }
+    .wa-float{position:fixed;right:16px;bottom:16px;z-index:1200;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--wa),var(--wa2));color:white;box-shadow:0 18px 40px rgba(37,211,102,.35);animation:floatBtn 2.8s ease-in-out infinite}
+    .wa-float svg{width:32px;height:32px}
 
-    input:focus,select:focus,textarea:focus{
-      border-color:rgba(29,168,255,.45);
-      box-shadow:0 0 0 4px rgba(29,168,255,.10);
-    }
-
-    /* FOOTER */
-    .footer{
-      padding:44px 0 90px;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr .9fr;
-      gap:22px;
-      padding-top:24px;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-
-    .footer-box h4{
-      font-family:"Oswald",sans-serif;
-      text-transform:uppercase;
-      font-size:22px;
-      margin-bottom:10px;
-    }
-
-    .footer-box p,
-    .footer-box li,
-    .footer-box a{
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.8;
-    }
-
-    .footer-box ul{
-      list-style:none;
-      display:grid;
-      gap:6px;
-    }
-
-    .footer-bottom{
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    /* FLOAT WA */
-    .wa-float{
-      position:fixed;
-      right:16px;
-      bottom:16px;
-      z-index:1200;
-      width:64px;
-      height:64px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg,var(--wa),var(--wa2));
-      color:white;
-      box-shadow:0 18px 40px rgba(37,211,102,.35);
-      animation:floatBtn 2.8s ease-in-out infinite;
-    }
-
-    .wa-float svg{
-      width:32px;
-      height:32px;
-    }
-
-    @keyframes spin{
-      to{transform:rotate(360deg)}
-    }
-
-    @keyframes floatLogo{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-4px)}
-    }
-
-    @keyframes floatHero{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-7px)}
-    }
-
-    @keyframes floatBtn{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-5px)}
-    }
+    @keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    @keyframes floatHeroBg{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.02)}}
+    @keyframes floatBtn{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
     @media (max-width:1050px){
-      .menu{
-        position:absolute;
-        top:82px;
-        left:12px;
-        right:12px;
-        background:#0b1218;
-        border:1px solid rgba(255,255,255,.08);
-        border-radius:18px;
-        box-shadow:var(--shadow);
-        padding:16px;
-        display:none;
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
+      .menu{position:absolute;top:82px;left:12px;right:12px;background:white;border:1px solid rgba(21,92,255,.12);border-radius:18px;box-shadow:var(--shadow);padding:16px;display:none;flex-direction:column;align-items:flex-start}
       .menu.open{display:flex}
       .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
       .header-cta{display:none}
@@ -802,23 +179,24 @@
       .brand-text strong{font-size:19px}
       .brand-text small{font-size:9px}
       .brand-logo{width:56px;height:56px}
-      .brand-logo span{font-size:21px}
+      .gallery-head{align-items:flex-start;flex-direction:column}
     }
 
     @media (max-width:520px){
-      .hero-logo-wrap{width:150px}
       .hero-title{font-size:38px}
       .hero-actions .btn{width:100%}
       .footer-bottom{display:grid}
     }
   </style>
 </head>
-<body>
 
+<body>
   <header class="header">
     <div class="container nav">
       <a href="#inicio" class="brand">
-        <div class="brand-logo"><span>MV</span></div>
+        <div class="brand-logo">
+          <img src="assets/logo.jpg" alt="Logo Multiserviabc">
+        </div>
         <div class="brand-text">
           <strong>Multiserviabc</strong>
           <small>Solução Inteligente</small>
@@ -834,27 +212,24 @@
           <a href="#mapa">Endereço</a>
           <a href="#contato">Contato</a>
         </nav>
-
         <div class="header-cta">
           <button class="btn btn-wa" onclick="abrirWhatsApp('Botão do topo', 'Quero solicitar um orçamento.')">WhatsApp</button>
           <a class="btn btn-primary" href="#contato">Agendar</a>
         </div>
-
         <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
       </div>
     </div>
   </header>
 
   <main id="inicio">
-
     <section class="hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg">
+        <img src="assets/logo.jpg" alt="Logo Multiserviabc no fundo">
+      </div>
 
       <div class="container">
         <div class="hero-content">
-          <div class="hero-logo-wrap">
-            <img class="hero-logo" src="assets/logo.jpg" alt="Logo Multiserviabc">
-          </div>
+          <div class="hero-kicker">Atendimento rápido pelo WhatsApp</div>
 
           <h1 class="hero-title">
             Multiserviabc
@@ -886,12 +261,8 @@
           <div class="gallery-text">
             <span class="tag">Galeria premium</span>
             <h2>Nossos <span class="gradient">trabalhos</span></h2>
-            <p>
-              Aqui entram as 12 fotos dos trabalhos realizados pela Multiserviabc.
-              O carrossel passa para o lado automaticamente e também pode ser controlado pelas setas.
-            </p>
+            <p>As 12 fotos dos trabalhos realizados passam automaticamente para o lado e também podem ser controladas pelas setas.</p>
           </div>
-
           <div class="slider-controls">
             <button class="slider-btn" onclick="moveSlider(-1)">‹</button>
             <button class="slider-btn" onclick="moveSlider(1)">›</button>
@@ -920,9 +291,7 @@
         <div class="section-top">
           <span class="tag">Serviços</span>
           <h2 class="section-title">O que a <span>Multiserviabc</span> faz</h2>
-          <p class="section-sub">
-            Serviços com foco em qualidade, acabamento e boa apresentação para valorizar o ambiente e transmitir mais confiança ao cliente.
-          </p>
+          <p class="section-sub">Serviços com foco em qualidade, acabamento e boa apresentação para valorizar o ambiente.</p>
         </div>
 
         <div class="grid-3">
@@ -932,18 +301,16 @@
             <p>Instalação de box com acabamento limpo e visual moderno para deixar seu banheiro mais bonito e funcional.</p>
             <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Box', 'Olá, tenho interesse em instalação de box.')">Quero esse serviço</button>
           </div>
-
           <div class="card">
             <div class="icon">🪟</div>
             <h3>Janelas</h3>
-            <p>Instalação de janelas e soluções em vidro para ambientes residenciais e comerciais com ótimo acabamento.</p>
+            <p>Instalação de janelas e soluções em vidro para ambientes residenciais e comerciais.</p>
             <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Janelas', 'Olá, tenho interesse em instalação de janelas.')">Quero esse serviço</button>
           </div>
-
           <div class="card">
             <div class="icon">🪞</div>
             <h3>Espelhos</h3>
-            <p>Espelhos para diferentes ambientes, trazendo amplitude, elegância e um visual mais sofisticado.</p>
+            <p>Espelhos para diferentes ambientes, trazendo amplitude, elegância e visual sofisticado.</p>
             <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Espelhos', 'Olá, tenho interesse em instalação de espelhos.')">Quero esse serviço</button>
           </div>
         </div>
@@ -956,11 +323,7 @@
           <div class="card">
             <span class="tag">Sobre</span>
             <h3 style="margin-top:12px;">Multiserviabc</h3>
-            <p>
-              Empresa localizada em São Bernardo do Campo, trabalhando com instalação de box, janelas, espelhos e outros serviços. 
-              A proposta do site é apresentar os trabalhos, gerar confiança e facilitar o contato rápido pelo WhatsApp.
-            </p>
-
+            <p>Empresa localizada em São Bernardo do Campo, trabalhando com instalação de box, janelas, espelhos e outros serviços.</p>
             <ul class="list">
               <li>Instalação de box</li>
               <li>Instalação de janelas</li>
@@ -968,26 +331,22 @@
               <li>Atendimento em São Bernardo do Campo</li>
               <li>Orçamento rápido e atendimento direto</li>
             </ul>
-
             <button class="btn btn-primary" onclick="abrirWhatsApp('Sobre - Multiserviabc', 'Olá, quero saber mais sobre os serviços da Multiserviabc.')">Falar com a empresa</button>
           </div>
 
           <div class="card">
             <span class="tag">Diferenciais</span>
             <h3 style="margin-top:12px;">Por que escolher</h3>
-            <p>
-              Uma apresentação premium para destacar melhor a empresa, mostrar os trabalhos já feitos e facilitar a conversão de clientes.
-            </p>
-
+            <p>Uma apresentação clara, branca e moderna para destacar melhor a empresa e facilitar a conversão.</p>
             <ul class="list">
-              <li>Visual profissional e moderno</li>
+              <li>Visual profissional nas cores da marca</li>
+              <li>Logo no fundo da hero</li>
               <li>Carrossel automático com os trabalhos</li>
               <li>Botões rápidos de contato</li>
               <li>Mapa no endereço para facilitar localização</li>
-              <li>Site totalmente adaptado para celular</li>
+              <li>Site adaptado para celular</li>
             </ul>
-
-            <button class="btn btn-outline" onclick="abrirWhatsApp('Diferenciais', 'Olá, quero solicitar um orçamento agora.')">Pedir orçamento</button>
+            <button class="btn btn-light" onclick="abrirWhatsApp('Diferenciais', 'Olá, quero solicitar um orçamento agora.')">Pedir orçamento</button>
           </div>
         </div>
       </div>
@@ -999,33 +358,19 @@
           <div class="map-info">
             <span class="tag">Endereço</span>
             <h3>Veja no <span class="gradient">mapa</span></h3>
-            <p>
-              Flávio Fongaro 456<br>
-              São Bernardo do Campo - SP
-            </p>
+            <p>Flávio Fongaro 456<br>São Bernardo do Campo - SP</p>
           </div>
-
-          <iframe
-            class="map-frame"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Fl%C3%A1vio%20Fongaro%20456%20S%C3%A3o%20Bernardo%20do%20Campo%20SP&output=embed">
-          </iframe>
+          <iframe class="map-frame" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Fl%C3%A1vio%20Fongaro%20456%20S%C3%A3o%20Bernardo%20do%20Campo%20SP&output=embed"></iframe>
         </div>
 
         <div class="form-card" id="contato">
           <div class="form-box">
             <span class="tag">Contato rápido</span>
             <h3>Agende ou peça <span class="gradient">orçamento</span></h3>
-            <p>
-              Preencha os dados e o WhatsApp abrirá com uma mensagem pronta para a Multiserviabc.
-            </p>
-
+            <p>Preencha os dados e o WhatsApp abrirá com uma mensagem pronta para a Multiserviabc.</p>
             <form class="form-grid" onsubmit="enviarFormulario(event)">
               <input type="text" name="nome" placeholder="Seu nome" required>
               <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
-
               <select name="servico" required>
                 <option value="">Tipo de serviço</option>
                 <option>Box</option>
@@ -1033,11 +378,8 @@
                 <option>Espelhos</option>
                 <option>Outro serviço</option>
               </select>
-
               <input type="text" name="bairro" placeholder="Bairro / Cidade">
-
               <textarea class="full" name="mensagem" placeholder="Descreva o que você precisa..."></textarea>
-
               <button class="btn btn-wa full" type="submit">Enviar para WhatsApp</button>
             </form>
           </div>
@@ -1050,11 +392,8 @@
         <div class="footer-grid">
           <div class="footer-box">
             <h4>Multiserviabc</h4>
-            <p>
-              Trabalhamos com instalação de box, janelas, espelhos e outros serviços, oferecendo solução inteligente com boa apresentação e atendimento prático.
-            </p>
+            <p>Trabalhamos com instalação de box, janelas, espelhos e outros serviços, oferecendo solução inteligente com boa apresentação e atendimento prático.</p>
           </div>
-
           <div class="footer-box">
             <h4>Menu</h4>
             <ul>
@@ -1066,7 +405,6 @@
               <li><a href="#contato">Contato</a></li>
             </ul>
           </div>
-
           <div class="footer-box">
             <h4>Contato</h4>
             <ul>
@@ -1077,7 +415,6 @@
             </ul>
           </div>
         </div>
-
         <div class="footer-bottom">
           <p>© 2026 Multiserviabc - Todos os direitos reservados</p>
           <p>Site criado para apresentação e captação de clientes</p>
@@ -1106,33 +443,19 @@
     });
 
     function abrirWhatsApp(botao, interesse){
-      const texto =
-`Olá, vim pelo site da Multiserviabc.
-
-Botão clicado: ${botao}
-Interesse: ${interesse}`;
+      const texto = `Olá, vim pelo site da Multiserviabc.\n\nBotão clicado: ${botao}\nInteresse: ${interesse}`;
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
     }
 
     function enviarFormulario(event){
       event.preventDefault();
       const form = event.target;
-
       const nome = form.nome.value.trim();
       const telefone = form.telefone.value.trim();
       const servico = form.servico.value.trim();
       const bairro = form.bairro.value.trim();
       const mensagem = form.mensagem.value.trim();
-
-      const texto =
-`Olá, vim pelo site da Multiserviabc e quero um orçamento.
-
-Nome: ${nome}
-WhatsApp: ${telefone}
-Serviço: ${servico}
-Bairro/Cidade: ${bairro}
-Mensagem: ${mensagem}`;
-
+      const texto = `Olá, vim pelo site da Multiserviabc e quero um orçamento.\n\nNome: ${nome}\nWhatsApp: ${telefone}\nServiço: ${servico}\nBairro/Cidade: ${bairro}\nMensagem: ${mensagem}`;
       window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
     }
 
@@ -1159,7 +482,6 @@ Mensagem: ${mensagem}`;
     }
 
     startAutoSlide();
-
     slider.addEventListener("mouseenter", stopAutoSlide);
     slider.addEventListener("mouseleave", startAutoSlide);
     slider.addEventListener("touchstart", stopAutoSlide, { passive:true });
